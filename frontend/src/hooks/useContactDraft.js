@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { safeStorage } from '../utils/safeStorage';
 
 const DRAFT_KEY = 'smart-phonebook-contact-draft';
 
@@ -39,7 +40,7 @@ export const useContactDraft = () => {
 
   useEffect(() => {
     try {
-      const raw = localStorage.getItem(DRAFT_KEY);
+      const raw = safeStorage.getItem(DRAFT_KEY);
       if (!raw) {
         return;
       }
@@ -49,26 +50,26 @@ export const useContactDraft = () => {
         setHasDraft(true);
       }
     } catch (_error) {
-      localStorage.removeItem(DRAFT_KEY);
+      safeStorage.removeItem(DRAFT_KEY);
     }
   }, []);
 
   const saveDraft = useCallback((nextDraft) => {
     if (!hasMeaningfulDraft(nextDraft)) {
-      localStorage.removeItem(DRAFT_KEY);
+      safeStorage.removeItem(DRAFT_KEY);
       setDraft(null);
       setHasDraft(false);
       return false;
     }
 
-    localStorage.setItem(DRAFT_KEY, JSON.stringify(nextDraft));
+    safeStorage.setItem(DRAFT_KEY, JSON.stringify(nextDraft));
     setDraft(nextDraft);
     setHasDraft(true);
     return true;
   }, []);
 
   const clearDraft = useCallback(() => {
-    localStorage.removeItem(DRAFT_KEY);
+    safeStorage.removeItem(DRAFT_KEY);
     setDraft(null);
     setHasDraft(false);
   }, []);

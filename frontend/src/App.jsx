@@ -13,6 +13,7 @@ import { useDebounce } from './hooks/useDebounce';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 import { contactService } from './services/contactService';
 import { digitsOnly, hasLetters, isFullTenDigitPhone } from './utils/phoneUtils';
+import { safeStorage } from './utils/safeStorage';
 
 const modes = ['name_number', 'email', 'company'];
 
@@ -88,7 +89,7 @@ const App = () => {
   const [importWorking, setImportWorking] = useState(false);
   const [importResult, setImportResult] = useState(null);
   const [toasts, setToasts] = useState([]);
-  const [darkMode, setDarkMode] = useState(() => localStorage.getItem('phonebook-theme') === 'dark');
+  const [darkMode, setDarkMode] = useState(() => safeStorage.getItem('phonebook-theme') === 'dark');
   const { draft, hasDraft, saveDraft, clearDraft } = useContactDraft();
 
   const filters = useMemo(() => getBackendFilters(selectedChips), [selectedChips]);
@@ -154,7 +155,7 @@ const App = () => {
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', darkMode);
-    localStorage.setItem('phonebook-theme', darkMode ? 'dark' : 'light');
+    safeStorage.setItem('phonebook-theme', darkMode ? 'dark' : 'light');
   }, [darkMode]);
 
   useEffect(() => {
