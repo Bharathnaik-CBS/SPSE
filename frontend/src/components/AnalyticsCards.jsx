@@ -1,3 +1,4 @@
+import React from 'react';
 import { AlertTriangle, Building2, Star, Tag, UserPlus, Users } from 'lucide-react';
 
 const statItems = (stats) => [

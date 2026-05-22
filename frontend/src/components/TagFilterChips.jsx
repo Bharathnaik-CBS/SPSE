@@ -1,3 +1,4 @@
+import React from 'react';
 import { Star } from 'lucide-react';
 
 const defaultChips = ['Family', 'Work', 'Friends', 'College', 'Client', 'Emergency', 'Favorite'];

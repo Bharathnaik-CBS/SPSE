@@ -1,3 +1,4 @@
+import React from 'react';
 import { Mail, Phone, Star } from 'lucide-react';
 import { getInitials } from '../utils/initials';
 import { highlightMatch } from '../utils/highlightMatch.jsx';

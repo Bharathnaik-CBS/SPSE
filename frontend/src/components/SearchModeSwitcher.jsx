@@ -1,3 +1,4 @@
+import React from 'react';
 import { AtSign, Building2, RotateCw, UserRoundSearch } from 'lucide-react';
 
 const modes = [

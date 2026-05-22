@@ -1,3 +1,4 @@
+import React from 'react';
 import { Clock3, Loader2, SearchX } from 'lucide-react';
 import ContactCard from './ContactCard';
 import ContactDetails from './ContactDetails';

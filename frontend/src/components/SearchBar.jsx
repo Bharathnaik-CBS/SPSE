@@ -1,3 +1,4 @@
+import React from 'react';
 import { Plus, Search } from 'lucide-react';
 
 const SearchBar = ({ value, onChange, onAdd, inputRef, disabled }) => (

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Download, Moon, Sun } from 'lucide-react';
 import AnalyticsCards from './components/AnalyticsCards';
 import ContactDrawer from './components/ContactDrawer';

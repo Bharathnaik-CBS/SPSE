@@ -1,3 +1,4 @@
+import React from 'react';
 import { FilePenLine, X } from 'lucide-react';
 
 const DraftResumePopup = ({ visible, onOpen, onDismiss }) => {

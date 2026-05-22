@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Check, Heart, Loader2, Plus, Trash2, X } from 'lucide-react';
 import AvatarCropper from './AvatarCropper';
 import { emptyDraft } from '../hooks/useContactDraft';
