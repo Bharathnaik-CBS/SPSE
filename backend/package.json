@@ -1,0 +1,37 @@
+{
+  "name": "smart-phonebook-search-engine-backend",
+  "version": "1.0.0",
+  "description": "REST API backend for the Smart Phonebook Search Engine assessment project.",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "check": "node --check src/server.js && node --check src/app.js && node --check src/config/db.js && node --check src/config/cloudinary.js && node --check src/models/Contact.js && node --check src/controllers/contactController.js && node --check src/controllers/dashboardController.js && node --check src/routes/contactRoutes.js && node --check src/routes/dashboardRoutes.js && node --check src/middlewares/errorHandler.js && node --check src/middlewares/parseFormData.js && node --check src/middlewares/upload.js && node --check src/middlewares/validate.js && node --check src/utils/AppError.js && node --check src/utils/asyncHandler.js && node --check src/utils/csvUtils.js && node --check src/utils/duplicateUtils.js && node --check src/utils/response.js && node --check src/utils/searchUtils.js"
+  },
+  "keywords": [
+    "phonebook",
+    "contacts",
+    "express",
+    "mongodb",
+    "mongoose",
+    "csv"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cloudinary": "^2.5.1",
+    "cors": "^2.8.6",
+    "csv-parser": "^3.0.0",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.0.0",
+    "mongoose": "^8.24.0",
+    "multer": "^1.4.5-lts.1",
+    "streamifier": "^0.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
